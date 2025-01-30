@@ -35,7 +35,7 @@ public class Atlas_shortcutkey_Editing {
 			System.out.println("The server is Opened sucessfully");
 			WebDriverWait wait = new WebDriverWait(driver, 50);
 			WebElement viewerSectionLink = wait
-					.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(@class, 'ng-tns-c93-3')]")));
+					.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@src='/viewer/assets/images/colorsvg/gallery.svg']")));
 			viewerSectionLink.click();
 			System.out.println("--------------------------*****************-----------------------");
 			System.out.println("The Viewer Icon is clicked");
@@ -119,17 +119,35 @@ public class Atlas_shortcutkey_Editing {
 		@Test (priority=3)
 		public void Direct_Draw_page() throws InterruptedException {
 			try {
-				WebDriverWait wait = new WebDriverWait(driver, 50);
-				Actions actions = new Actions(driver);
-				actions.keyDown(Keys.SHIFT).sendKeys("o").keyUp(Keys.SHIFT).build().perform();
+				WebDriverWait wait = new WebDriverWait(driver, 30);
+				WebElement menu = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@src='/viewer/assets/images/colorsvg/oldmenu.svg']")));
+				menu.click();
 				System.out.println("--------------------------*****************-----------------------");
-				System.out.println("Action executed successfully!");
-
-			} catch (NoSuchElementException e) {
-				System.out.println("Element not found: " + e.getMessage());
+				System.out.println("The menu button is clicked");
 			} catch (Exception e) {
-				System.out.println("Error executing action: " + e.getMessage());
-			}
+				System.out.println("--------------------------*****************-----------------------");
+				System.out.println("The menu button is not clicked");
+			} 
+			try {
+				WebDriverWait wait = new WebDriverWait(driver, 30);
+				WebElement draw = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@src='/viewer/assets/images/colorsvg/paintbrush.svg']")));
+				draw.click();
+				System.out.println("--------------------------*****************-----------------------");
+				System.out.println("The draw menu button is clicked");
+			} catch (Exception e) {
+				System.out.println("--------------------------*****************-----------------------");
+				System.out.println("The draw menu button is not clicked");
+			}  
+					try {
+						WebDriverWait wait = new WebDriverWait(driver, 30);
+						WebElement unlock = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Unlock']")));
+						unlock.click();
+						System.out.println("--------------------------*****************-----------------------");
+						System.out.println("The Unlock button is clicked");
+					} catch (Exception e) {
+						System.out.println("--------------------------*****************-----------------------");
+						System.out.println("The Unlock button is not clicked");
+					}
 
 			try {
 				WebDriverWait wait = new WebDriverWait(driver, 50);
@@ -176,7 +194,7 @@ public class Atlas_shortcutkey_Editing {
 			try {
 				WebDriverWait wait = new WebDriverWait(driver, 50);
 				WebElement brainId = wait
-						.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='10155_anchor']")));
+						.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='1_anchor']")));
 				brainId.click();
 				Thread.sleep(3000);
 				System.out.println("--------------------------*****************-----------------------");
