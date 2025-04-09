@@ -58,7 +58,7 @@ public class Atlas_shortcutkey_Editing {
 			WebDriverWait wait2 = new WebDriverWait(driver, 20);
 			WebElement emailInput = wait2
 					.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@type='email']")));
-			emailInput.sendKeys("softwaretestingteam9@gmail.com");
+			emailInput.sendKeys("teamsoftware457@gmail.com");
 			System.out.println("--------------------------*****************-----------------------");
 			System.out.println("Mail I'd is entered");
 			WebDriverWait wait3 = new WebDriverWait(driver, 20);
